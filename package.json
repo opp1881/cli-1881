@@ -6,7 +6,8 @@
   "scripts": {
     "start": "ts-node src/cli-1881.ts",
     "build": "tsc",
-    "prepublish": "npm run build"
+    "lint": "eslint src/",
+    "prepublish": "npm run build && npm run lint"
   },
   "bin": {
     "cli1881": "./dist/cli-1881.js"
@@ -19,6 +20,11 @@
   },
   "devDependencies": {
     "@types/node-fetch": "^2.5.7",
+    "@typescript-eslint/eslint-plugin": "^3.10.1",
+    "@typescript-eslint/parser": "^3.10.1",
+    "eslint": "^7.7.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.1.0",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.2"
   }
