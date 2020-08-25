@@ -1,6 +1,6 @@
 {
   "name": "cli-1881",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "CLI search client for 1881",
   "main": "cli-1881.js",
   "scripts": {
@@ -14,5 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "node-fetch": "^2.6.0"
+  },
+  "publishConfig": {
+      "registry": "https://npm.pkg.github.com/"
   }
 }
