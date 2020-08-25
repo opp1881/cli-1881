@@ -34,15 +34,15 @@ async function search1881(query) {
     const res = await search(query=query)
 
     res.contacts.forEach(async (contact) => {
-        console.log(contact.id)
         lookupresult = await lookupId(contact.id)
-        console.log(lookupresult)
+        lookupresult.contacts.forEach((contact) => {
+            const name = contact.type === 'Person' ? `${contact.firstName} ${contact.lastName}` : contact.name
+            const phone = contact.contactPoints != null ? `${contact.contactPoints[0].label}: ${contact.contactPoints[0].value}` : ''
+            const address = contact.geography != null ? contact.geography.address.addressString : ''
+
+            console.log(`${phone}, ${name}, ${address} | ${contact.id} ${contact.type}`)
+        })
     });
-
-
-    // res.contacts.forEach(({ organizationNumber, type, id, name, postCode, postArea, infoUrl }) => {
-    //     console.log(`${organizationNumber}, ${type}, ${id}, ${name}, ${postCode}, ${postArea}\n${infoUrl}`)
-    // })
 
   } catch (error) {
     console.error('err: ' + error.message);
