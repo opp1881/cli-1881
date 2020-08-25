@@ -1,0 +1,14 @@
+{
+  "name": "cli-1881",
+  "version": "1.0.0",
+  "description": "CLI search client for 1881",
+  "main": "cli-1881.js",
+  "scripts": {
+    "start": "node cli-1881.js"
+  },
+  "author": "Kristian Byrkjeland",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
+}
