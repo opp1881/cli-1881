@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const fetch = require('node-fetch')
 
-const subscriptionKey = process.env.subscriptionKey;
+const subscriptionKey = process.env.OPPLYSNINGEN_SUBSCRIPTION_KEY;
 if (!subscriptionKey) {
     console.error('Environment variable for your subscription key is not set.')
 };

@@ -7,6 +7,7 @@
     "start": "node cli-1881.js"
   },
   "author": "Kristian Byrkjeland",
+  "repository": "https://github.com/opp1881/cli-1881",
   "license": "ISC",
   "dependencies": {
     "node-fetch": "^2.6.0"
