@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node cli-1881.js"
   },
-  "author": "Kristian Byrkjeland",
+  "bin": {
+      "cli1881": "./cli-1881.js"
+  },
+  "author": "Kristian Byrkjeland <kristian.byrkjeland@opplysningen.no>",
   "repository": "https://github.com/opp1881/cli-1881",
   "license": "ISC",
   "dependencies": {
