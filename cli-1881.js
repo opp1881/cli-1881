@@ -10,28 +10,26 @@ const headers = {
     'Ocp-Apim-Subscription-Key': subscriptionKey
 }
 
-async function search(query='', type='unit', page=1, limit=3) {
-    return new Promise((resolve, reject) => {
-        const url = `https://services.api1881.no/search/${type}?query=${query}&page=${page}&limit=${limit}`
-        const request = fetch(url, {headers: headers})
-            .then(response => resolve(response.json()))
+function search(query='', type='unit', page=1, limit=3) {
+    const queryParams = new URLSearchParams({
+        query,
+        page,
+        limit
     })
+    const url = `https://services.api1881.no/search/${type}?${queryParams.toString()}`
+    return fetch(url, {headers: headers})
+        .then(response => response.json())
 }
 
-async function lookupId(id) {
-    return new Promise((resolve, reject) => {
-        const url = `https://services.api1881.no/lookup/id/${id}`
-        const request = fetch(url, {headers: headers})
-            .then(response => {
-                resolve(response.json())
-            })
-    })
+function lookupId(id) {
+    const url = `https://services.api1881.no/lookup/id/${id}`
+    return fetch(url, {headers: headers})
+        .then(response => response.json())
 }
-
 
 async function search1881(query) {
   try {
-    const res = await search(query=query)
+    const res = await search(query)
 
     res.contacts.forEach(async (contact) => {
         console.log(contact.id)
@@ -49,4 +47,4 @@ async function search1881(query) {
   }
 }
 console.log('Querying for: ' + process.argv.slice(2))
-search1881(query=process.argv.slice(2))
+search1881(process.argv.slice(2))
