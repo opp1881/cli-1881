@@ -2,17 +2,24 @@
   "name": "cli-1881",
   "version": "0.1.0",
   "description": "CLI search client for 1881",
-  "main": "cli-1881.js",
+  "main": "dist/cli-1881.js",
   "scripts": {
-    "start": "node cli-1881.js"
+    "start": "ts-node src/cli-1881.ts",
+    "build": "tsc",
+    "prepublish": "npm run build"
   },
   "bin": {
-      "cli1881": "./cli-1881.js"
+    "cli1881": "./dist/cli-1881.js"
   },
   "author": "Kristian Byrkjeland <kristian.byrkjeland@opplysningen.no>",
   "repository": "https://github.com/opp1881/cli-1881",
   "license": "ISC",
   "dependencies": {
     "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.5.7",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
   }
 }

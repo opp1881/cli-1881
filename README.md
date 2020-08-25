@@ -7,4 +7,7 @@ Add the subscription key to your environment variables:
 
 Install and run the client
 
-`TBD`
+```
+npm install
+npm start 12345678
+```
